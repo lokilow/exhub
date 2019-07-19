@@ -1,6 +1,8 @@
 # Github
 
-**Wrapper around the Github Hub Client**
+** An elixir wrapper around the Github 'hub' CLI tool **
+
+
 The motivation for this project was to be able to clean my my Github easily.  I had a ton
 of repositories to delete, and deleting 40+ repos through the website would be super
 annoying.  So, right now there is only delete functionality, but the project may grow as
