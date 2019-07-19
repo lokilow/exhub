@@ -1,6 +1,6 @@
 defmodule Exhub do
   @moduledoc ~S"""
-  Github is an elixir wrapper around the Github 'hub' CLI tool.
+  Exhub is an Elixir wrapper around the Github 'hub' CLI tool.
   Right now you can use it to create repositories on Github 
   from a local repository, and delete remote repositories.
   """
