@@ -1,12 +1,30 @@
 defmodule Github do
-  """
-  Create this repository on GitHub and add GitHub as origin.
-  Must be run from inside a repository
-
-  Example: 
-  Github.create_repo("github", [private: true, description: "An elixir wrapper around the Github 'hub' CLI tool", remote_name: "github"])
+  @moduledoc ~S"""
+  Github is an elixir wrapper around the Github 'hub' CLI tool.
+  Right now you can use it to create repositories on Github 
+  from a local repository, and delete remote repositories.
   """
 
+  @doc """
+  Creates a repository on Github.  Must be run from inside a git repository.
+
+  `repo_name` can be just a `name` or `organization/name`
+
+  `opts` include 
+
+  * :private :: bool() the repository will be private on Github
+  * :description :: string() The Github project description
+  * :remote_name  :: string() Sets the name of the remote branch in .git/config
+
+  ## Example
+
+      Github.create_repo("github", [
+      private: true, 
+      description: "An elixir wrapper around the Github 'hub' CLI tool",
+      remote_name: "github"
+      ])
+
+  """
   def create_repo(repo_name, opts \\ []) when is_binary(repo_name) do
     private =
       case opts[:private] do
