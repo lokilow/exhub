@@ -45,23 +45,34 @@ defmodule Github do
       end
 
     args = Enum.concat([["create"], private, description, remote_name, [repo_name]])
-    IO.inspect(args)
     System.cmd("hub", args, into: IO.stream(:stdio, :line))
   end
 
-  def delete_repo_from_file(file) do
-    File.stream!(file)
-    |> Enum.each(fn line ->
-      trimmed = String.trim(line)
-      System.cmd("hub", ["delete", "-y", trimmed], into: IO.stream(:stdio, :line))
-    end)
-  end
+  @doc """
+  Deletes a repository on Github.
 
-  def delete_repo(name) do
+  `repo_name` can be just a `name` or `organization/name`
+
+  ## Example
+
+      delete_repo("old_repo")
+
+  """
+  def Github.delete_repo(name) do
     System.cmd("hub", ["delete", "-y", name], into: IO.stream(:stdio, :line))
   end
 
-  def delete_repos(repos) do
+  @doc """
+  Deletes multiple repositories on Github.
+
+  each `repo_name` can be just a `name` or `organization/name`
+
+  ## Example
+
+      delete_repos(["old_repo_1", "myorg/old_repo_2"])
+
+  """
+  def Github.delete_repos(repos) do
     repos
     |> Enum.each(&delete_repo(&1))
   end
