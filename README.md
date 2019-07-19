@@ -1,6 +1,7 @@
 # Github
 
 **An elixir wrapper around the Github 'hub' CLI tool**
+[docs](https://github.com/lokilow/github)
 
 
 The motivation for this project was to be able to clean my my Github easily.  I had a ton
