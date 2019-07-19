@@ -55,10 +55,10 @@ defmodule Exhub do
 
   ## Example
 
-      delete_repo("old_repo")
+      Exhub.delete_repo("old_repo")
 
   """
-  def Exhub.delete_repo(name) do
+  def delete_repo(name) do
     System.cmd("hub", ["delete", "-y", name], into: IO.stream(:stdio, :line))
   end
 
@@ -72,7 +72,7 @@ defmodule Exhub do
       delete_repos(["old_repo_1", "myorg/old_repo_2"])
 
   """
-  def Exhub.delete_repos(repos) do
+  def delete_repos(repos) do
     repos
     |> Enum.each(&delete_repo(&1))
   end
