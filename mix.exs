@@ -1,20 +1,20 @@
-defmodule Github.MixProject do
+defmodule Exhub.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :github,
+      app: :exhub,
       version: "0.1.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
 
       # Docs
-      name: "Github",
+      name: "Exhub",
       source_url: "https://gitlab.com/lokilow/gitlab",
       docs: [
         # The main page in the docs
-        main: "Github",
+        main: "Exhub",
         extras: ["README.md"]
       ]
     ]

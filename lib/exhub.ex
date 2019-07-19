@@ -1,4 +1,4 @@
-defmodule Github do
+defmodule Exhub do
   @moduledoc ~S"""
   Github is an elixir wrapper around the Github 'hub' CLI tool.
   Right now you can use it to create repositories on Github 
@@ -18,7 +18,7 @@ defmodule Github do
 
   ## Example
 
-      Github.create_repo("github", [
+      Exhub.create_repo("github", [
       private: true, 
       description: "An elixir wrapper around the Github 'hub' CLI tool",
       remote_name: "github"
@@ -58,7 +58,7 @@ defmodule Github do
       delete_repo("old_repo")
 
   """
-  def Github.delete_repo(name) do
+  def Exhub.delete_repo(name) do
     System.cmd("hub", ["delete", "-y", name], into: IO.stream(:stdio, :line))
   end
 
@@ -72,7 +72,7 @@ defmodule Github do
       delete_repos(["old_repo_1", "myorg/old_repo_2"])
 
   """
-  def Github.delete_repos(repos) do
+  def Exhub.delete_repos(repos) do
     repos
     |> Enum.each(&delete_repo(&1))
   end

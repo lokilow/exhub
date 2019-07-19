@@ -1,4 +1,4 @@
-# Github
+# Exhub
 
 **An elixir wrapper around the Github 'hub' CLI tool**
 
@@ -15,7 +15,7 @@ Then, add Github to your mix.exs.
 ```elixir
 def deps do
   [
-    {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"}
+    {:exhub, github: "lokilow/exhub"}
   ]
 end
 ```
@@ -23,6 +23,6 @@ end
 
 ## Usage
 ```elixir
-Github.delete_repo("my_repo")
-Github.delete_repos(["old_repo_1", "old_repo_2"])
+Exhub.delete_repo("my_repo")
+Exhub.delete_repos(["old_repo_1", "old_repo_2"])
 ```
